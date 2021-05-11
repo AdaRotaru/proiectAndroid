@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    //views
-    android.widget.Button mRegisterBtn, mLoginBtn;
+
+    Button reg, log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,17 +17,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //init views
-        mRegisterBtn = findViewById(R.id.register_btn);
-        mLoginBtn = findViewById((R.id.login_btn));
+        reg = findViewById(R.id.register_button);
+        log = findViewById(R.id.login_button);
 
-        //handle register button click
-        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
+        reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //start register activ
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-
             }
         });
-    }
-}
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+    }}

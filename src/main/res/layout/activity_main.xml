@@ -16,15 +16,15 @@
 
     <!--Button Register-->
     <Button
-        android:id="@+id/register_btn"
+        android:id="@+id/register_button"
         android:text="Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/login_btn"/>
+        android:layout_above="@id/login_button"/>
 
     <!--Button Login-->
     <Button
-        android:id="@+id/login_btn"
+        android:id="@+id/login_button"
         android:text="Login"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"
