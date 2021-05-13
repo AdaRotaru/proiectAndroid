@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Patterns;
@@ -44,6 +45,13 @@ public class LoginActivity extends AppCompatActivity {
     Button log;
     SignInButton mGoogleLoginBtn;
 
+//    SharedPreferences sharedPref;
+//
+//    private static final String SHARED_PREF_NAME = "myPref";
+//    private static final String KEY_PASS = "pass";
+//    private static final String KEY_EMAIL = "email";
+
+
     private FirebaseAuth auth;
 
     ProgressDialog pd;
@@ -57,6 +65,9 @@ public class LoginActivity extends AppCompatActivity {
         actionBar.setTitle("Login");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
+
+
+
 
         //config google sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -74,6 +85,20 @@ public class LoginActivity extends AppCompatActivity {
         log = findViewById(R.id.loginButton);
         mGoogleLoginBtn = findViewById(R.id.googleLoginBtn);
 
+//        sharedPref = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+//
+//        String email = sharedPref.getString(KEY_EMAIL, null);
+//        if (email != null){
+//            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+//            startActivity(intent);
+//        }
+//
+//        SharedPreferences.Editor editor = sharedPref.edit();
+//        editor.putString(KEY_EMAIL, ema.getText().toString());
+//        editor.putString(KEY_PASS, pass.getText().toString());
+//        editor.apply();
+//        Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+//        startActivity(intent);
         log.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -86,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else {
                     loginUser(email, password);
+
                 }
             }
         });
